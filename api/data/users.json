@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "username": "sundhar",
+        "password": "sundhar123",
+        "role": "manager",
+        "full_name": "Sundhar",
+        "email": "sundhar@abc.com",
+        "created_at": "2025-12-04 19:00:00"
+    },
+    {
+        "id": 2,
+        "username": "nithish",
+        "password": "nithish123",
+        "role": "employee",
+        "full_name": "Nithish Parameswaran",
+        "email": "nithish@abc.com",
+        "created_at": "2025-12-04 19:00:00"
+    },
+    {
+        "id": 3,
+        "username": "siddarth",
+        "password": "siddarth123",
+        "role": "employee",
+        "full_name": "Siddarth Senthil",
+        "email": "siddarth@abc.com",
+        "created_at": "2025-12-04 19:00:00"
+    },
+    {
+        "id": 4,
+        "username": "saran",
+        "password": "saran123",
+        "role": "employee",
+        "full_name": "Saran Ravichandran",
+        "email": "saran@abc.com",
+        "created_at": "2025-12-04 19:00:00"
+    }
+]
