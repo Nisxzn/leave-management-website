@@ -1,4 +1,4 @@
-# ABC Company Leave Management System
+# Company Leave Management System
 
 A modern, file-based leave management system with a beautiful glassmorphism UI.
 
@@ -65,4 +65,4 @@ LMS/
 
 ---
 
-**Designed by Nithish** | © 2025 ABC Company Pvt Ltd
+**Designed by Nithish** 
