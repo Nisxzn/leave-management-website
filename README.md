@@ -1,6 +1,6 @@
 # Leave Management Website For Company 
 
-A modern, file-based leave management system with a beautiful glassmorphism UI.
+A modern, file-based leave management website with a neat and clean professional UI.
 
 ## Quick Start
 
