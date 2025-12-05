@@ -40,11 +40,11 @@ const EmployeeDashboard = ({ user, onLogout }) => {
     const getStatusColor = (status) => {
         switch (status) {
             case 'approved':
-                return 'bg-green-500/20 text-green-300 border-green-500/50';
+                return 'status-approved';
             case 'rejected':
-                return 'bg-red-500/20 text-red-300 border-red-500/50';
+                return 'status-rejected';
             default:
-                return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/50';
+                return 'status-pending';
         }
     };
 
@@ -59,8 +59,8 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                 <div className="glass-card p-6 mb-6">
                     <div className="flex justify-between items-center">
                         <div>
-                            <h1 className="text-3xl font-bold text-white mb-1">Employee Dashboard</h1>
-                            <p className="text-white/70">Welcome, {user.full_name}</p>
+                            <h1 className="text-3xl font-bold text-slate-800 mb-1">Employee Dashboard</h1>
+                            <p className="text-slate-600">Welcome, {user.full_name}</p>
                         </div>
                         <button onClick={onLogout} className="btn-secondary">
                             Logout
@@ -75,23 +75,23 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                     transition={{ delay: 0.1 }}
                     className="glass-card p-6 mb-6"
                 >
-                    <h2 className="text-2xl font-semibold text-white mb-4">Profile</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800 mb-4">Profile</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <p className="text-white/60 text-sm">Full Name</p>
-                            <p className="text-white font-medium">{user.full_name}</p>
+                            <p className="text-slate-600 text-sm">Full Name</p>
+                            <p className="text-slate-800 font-medium">{user.full_name}</p>
                         </div>
                         <div>
-                            <p className="text-white/60 text-sm">Email</p>
-                            <p className="text-white font-medium">{user.email}</p>
+                            <p className="text-slate-600 text-sm">Email</p>
+                            <p className="text-slate-800 font-medium">{user.email}</p>
                         </div>
                         <div>
-                            <p className="text-white/60 text-sm">Username</p>
-                            <p className="text-white font-medium">{user.username}</p>
+                            <p className="text-slate-600 text-sm">Username</p>
+                            <p className="text-slate-800 font-medium">{user.username}</p>
                         </div>
                         <div>
-                            <p className="text-white/60 text-sm">Role</p>
-                            <p className="text-white font-medium capitalize">{user.role}</p>
+                            <p className="text-slate-600 text-sm">Role</p>
+                            <p className="text-slate-800 font-medium capitalize">{user.role}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -119,26 +119,26 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                         exit={{ height: 0, opacity: 0 }}
                         className="glass-card p-6 mb-6"
                     >
-                        <h2 className="text-2xl font-semibold text-white mb-4">Apply for Leave</h2>
+                        <h2 className="text-2xl font-semibold text-slate-800 mb-4">Apply for Leave</h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label className="block text-white/80 mb-2">Leave Type</label>
+                                <label className="block text-slate-700 font-medium mb-2">Leave Type</label>
                                 <select
                                     value={formData.leave_type}
                                     onChange={(e) => setFormData({ ...formData, leave_type: e.target.value })}
                                     className="input-field w-full"
                                     required
                                 >
-                                    <option value="sick" style={{ color: 'black' }}>Sick Leave</option>
-                                    <option value="casual" style={{ color: 'black' }}>Casual Leave</option>
-                                    <option value="vacation" style={{ color: 'black' }}>Vacation</option>
-                                    <option value="emergency" style={{ color: 'black' }}>Emergency</option>
+                                    <option value="sick">Sick Leave</option>
+                                    <option value="casual">Casual Leave</option>
+                                    <option value="vacation">Vacation</option>
+                                    <option value="emergency">Emergency</option>
                                 </select>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-white/80 mb-2">Start Date</label>
+                                    <label className="block text-slate-700 font-medium mb-2">Start Date</label>
                                     <input
                                         type="date"
                                         value={formData.start_date}
@@ -148,7 +148,7 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-white/80 mb-2">End Date</label>
+                                    <label className="block text-slate-700 font-medium mb-2">End Date</label>
                                     <input
                                         type="date"
                                         value={formData.end_date}
@@ -160,7 +160,7 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                             </div>
 
                             <div>
-                                <label className="block text-white/80 mb-2">Reason</label>
+                                <label className="block text-slate-700 font-medium mb-2">Reason</label>
                                 <textarea
                                     value={formData.reason}
                                     onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
@@ -184,22 +184,22 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                     transition={{ delay: 0.3 }}
                     className="glass-card p-6"
                 >
-                    <h2 className="text-2xl font-semibold text-white mb-4">Leave History</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800 mb-4">Leave History</h2>
                     <div className="overflow-x-auto">
                         <table className="w-full">
                             <thead>
-                                <tr className="border-b border-white/20">
-                                    <th className="text-left text-white/80 py-3 px-4">Type</th>
-                                    <th className="text-left text-white/80 py-3 px-4">Start Date</th>
-                                    <th className="text-left text-white/80 py-3 px-4">End Date</th>
-                                    <th className="text-left text-white/80 py-3 px-4">Reason</th>
-                                    <th className="text-left text-white/80 py-3 px-4">Status</th>
+                                <tr className="table-header-border">
+                                    <th className="text-left text-slate-700 font-semibold py-3 px-4">Type</th>
+                                    <th className="text-left text-slate-700 font-semibold py-3 px-4">Start Date</th>
+                                    <th className="text-left text-slate-700 font-semibold py-3 px-4">End Date</th>
+                                    <th className="text-left text-slate-700 font-semibold py-3 px-4">Reason</th>
+                                    <th className="text-left text-slate-700 font-semibold py-3 px-4">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {leaveHistory.length === 0 ? (
                                     <tr>
-                                        <td colSpan="5" className="text-center text-white/60 py-8">
+                                        <td colSpan="5" className="text-center text-slate-500 py-8">
                                             No leave history found
                                         </td>
                                     </tr>
@@ -209,14 +209,14 @@ const EmployeeDashboard = ({ user, onLogout }) => {
                                             key={leave.id}
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="border-b border-white/10 hover:bg-white/5 transition-colors"
+                                            className="table-row-border table-row-hover transition-colors"
                                         >
-                                            <td className="py-3 px-4 text-white capitalize">{leave.leave_type}</td>
-                                            <td className="py-3 px-4 text-white">{leave.start_date}</td>
-                                            <td className="py-3 px-4 text-white">{leave.end_date}</td>
-                                            <td className="py-3 px-4 text-white/80">{leave.reason}</td>
+                                            <td className="py-3 px-4 text-slate-800 capitalize font-medium">{leave.leave_type}</td>
+                                            <td className="py-3 px-4 text-slate-700">{leave.start_date}</td>
+                                            <td className="py-3 px-4 text-slate-700">{leave.end_date}</td>
+                                            <td className="py-3 px-4 text-slate-600">{leave.reason}</td>
                                             <td className="py-3 px-4">
-                                                <span className={`px-3 py-1 rounded-full text-sm border ${getStatusColor(leave.status)}`}>
+                                                <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(leave.status)}`}>
                                                     {leave.status}
                                                 </span>
                                             </td>
@@ -233,3 +233,4 @@ const EmployeeDashboard = ({ user, onLogout }) => {
 };
 
 export default EmployeeDashboard;
+

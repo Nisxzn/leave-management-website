@@ -31,34 +31,41 @@ const Login = ({ onLoginSuccess }) => {
     return (
         <div className="min-h-screen flex flex-col">
             {/* Header */}
-            <header className="glass-card mx-6 mt-6 p-4">
-                <h1 className="text-2xl font-bold text-white text-center">ABC Company</h1>
-                <p className="text-white/70 text-center">Manage your leaves easily and stay organized!</p>
+            <header className="glass-card mx-6 mt-6 p-5">
+                <div className="flex items-center justify-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                        <span className="text-black font-bold text-xl">A</span>
+                    </div>
+                    <div>
+                        <h1 className="text-2xl font-bold text-slate-800 tracking-tight">ABC Company</h1>
+                        <p className="text-slate-600 text-sm">Leave Management System</p>
+                    </div>
+                </div>
             </header>
 
             {/* Main Content */}
-            <div className="flex-1 flex items-center justify-center p-4">
+            <div className="flex-1 flex items-center justify-center p-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="glass-card p-8 w-full max-w-md"
+                    className="glass-card p-10 w-full max-w-md"
                 >
-                    <div className="text-center mb-8">
+                    <div className="text-center mb-10">
                         <motion.h1
                             initial={{ scale: 0.9 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.3 }}
-                            className="text-4xl font-bold text-white mb-2"
+                            className="text-3xl font-bold text-slate-800 mb-2 tracking-tight"
                         >
-                            Leave Management
+                            Welcome Back
                         </motion.h1>
-                        <p className="text-white/70">Sign in to continue</p>
+                        <p className="text-slate-600 text-sm">Please sign in to your account</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
-                            <label className="block text-white/80 mb-2 font-medium">Username</label>
+                            <label className="block text-slate-700 mb-2 font-medium text-sm">Username</label>
                             <input
                                 type="text"
                                 value={username}
@@ -70,7 +77,7 @@ const Login = ({ onLoginSuccess }) => {
                         </div>
 
                         <div>
-                            <label className="block text-white/80 mb-2 font-medium">Password</label>
+                            <label className="block text-slate-700 mb-2 font-medium text-sm">Password</label>
                             <input
                                 type="password"
                                 value={password}
@@ -85,30 +92,36 @@ const Login = ({ onLoginSuccess }) => {
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-xl"
+                                className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"
                             >
                                 {error}
                             </motion.div>
                         )}
 
                         <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.99 }}
                             type="submit"
                             disabled={loading}
-                            className="btn-primary w-full"
+                            className="btn-primary w-full mt-6"
                         >
                             {loading ? 'Signing in...' : 'Sign In'}
                         </motion.button>
                     </form>
+
+                    <div className="mt-6 pt-6 border-t border-slate-200">
+                        <p className="text-center text-slate-500 text-xs">
+                            For assistance, contact your system administrator
+                        </p>
+                    </div>
                 </motion.div>
             </div>
 
             {/* Footer */}
             <footer className="glass-card mx-6 mb-6 p-4">
-                <div className="text-center text-white/70 text-sm">
+                <div className="text-center text-slate-600 text-xs">
                     <p>© 2025 ABC Company Pvt Ltd. All rights reserved.</p>
-                    <p className="mt-1">Designed by <span className="text-white font-semibold">Nithish</span></p>
+                    <p className="mt-1">Designed by <span className="text-slate-700 font-medium">Nithish</span></p>
                 </div>
             </footer>
         </div>
@@ -116,3 +129,4 @@ const Login = ({ onLoginSuccess }) => {
 };
 
 export default Login;
+
